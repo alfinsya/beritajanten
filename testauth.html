@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Authentication - Indonesia Daily</title>
+    <title>Test Authentication - BERITA Janten</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -110,7 +110,7 @@
     <h1>ðŸ”§ Authentication Debugger</h1>
     
     <div class="card">
-        <h2>ðŸ“Š Current Status</h2>
+        <h2>ðŸ"Š Current Status</h2>
         <div id="currentStatus"></div>
     </div>
 
@@ -129,13 +129,13 @@
         <button class="btn btn-success" onclick="createTestUser()">âž• Create Test User</button>
         <button class="btn" onclick="refreshData()">ðŸ”„ Refresh</button>
         <button class="btn btn-danger" onclick="clearAll()">ðŸ—‘ï¸ Clear All Data</button>
-        <a href="index.html" class="btn">ðŸ  Go to Index</a>
+        <a href="index.html" class="btn">ðŸ  Go to Index</a>
         <a href="login.html" class="btn">ðŸ” Go to Login</a>
-        <a href="register.html" class="btn">ðŸ“ Go to Register</a>
+        <a href="register.html" class="btn">ðŸ" Go to Register</a>
     </div>
 
     <div class="card">
-        <h2>ðŸ“ Console Logs</h2>
+        <h2>ðŸ" Console Logs</h2>
         <pre id="consoleLogs"></pre>
     </div>
 
@@ -166,7 +166,7 @@
             const session = localStorage.getItem('userSession');
             
             if (!session) {
-                statusDiv.innerHTML = '<div class="status warning">âš ï¸ Not Logged In</div>';
+                statusDiv.innerHTML = '<div class="status warning">âš ï¸ Not Logged In</div>';
                 return;
             }
 
@@ -177,7 +177,7 @@
                     statusDiv.innerHTML = `
                         <div class="status success">
                             âœ… Logged In as: <strong>${userData.name}</strong><br>
-                            ðŸ“§ Email: ${userData.email}<br>
+                            ðŸ"§ Email: ${userData.email}<br>
                             ðŸ• Login Time: ${new Date(userData.loginTime).toLocaleString()}
                         </div>
                     `;
@@ -199,7 +199,7 @@
             keys.forEach(key => {
                 const value = localStorage.getItem(key);
                 const status = value ? 
-                    '<span class="badge badge-success">âœ“ EXISTS</span>' : 
+                    '<span class="badge badge-success">âœ" EXISTS</span>' : 
                     '<span class="badge badge-danger">âœ— NOT FOUND</span>';
                 
                 let displayValue = 'N/A';
@@ -285,7 +285,7 @@
         }
 
         function clearAll() {
-            if (!confirm('âš ï¸ This will delete ALL data!\n\nContinue?')) {
+            if (!confirm('âš ï¸ This will delete ALL data!\n\nContinue?')) {
                 return;
             }
             

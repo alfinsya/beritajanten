@@ -1,4 +1,4 @@
-const axios = require('axios');
+﻿const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
@@ -69,13 +69,13 @@ function extractFirstImage(content) {
     return normalizedSrc;
   }
   
-  // Fallback: look for any first significant image (not logo, ads, or profile pics)
+  // Fallback: look for any first significant image (not ads, icons, or profile pics)
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
   let match;
   
   while ((match = imgRegex.exec(content)) !== null) {
     const src = match[1];
-    if (!src.includes('logo.png') && 
+    if (!src.includes('favicon') && 
         !src.includes('ads-') && 
         !src.includes('cewe') && 
         !src.includes('cowok') && 
@@ -85,7 +85,7 @@ function extractFirstImage(content) {
     }
   }
   
-  return 'img/logo.png';
+  return 'img/news-800x500-1.jpg';
 }
 
 function scanLocalArticles() {
@@ -113,13 +113,18 @@ function scanLocalArticles() {
       const pMatch = content.match(/<p[^>]*>([^<]+)<\/p>/);
       if (pMatch) excerpt = pMatch[1].trim().substring(0, 150);
       
+      // Extract category from badge element
+      let category = 'Lokal';
+      const badgeMatch = content.match(/<a[^>]*class="badge[^"]*"[^>]*>([^<]+)<\/a>/i);
+      if (badgeMatch) category = badgeMatch[1].trim();
+      
       // Extract first image from content
       const imagePath = extractFirstImage(content);
       
       localArticles.push({
         title,
         excerpt,
-        category: 'Local',
+        category,
         date: new Date().toISOString().split('T')[0],
         image: imagePath,
         url: `article/${slug}.html`,
@@ -292,8 +297,8 @@ async function generateArticles() {
     console.log(`   ✨ New: ${newCount}`);
     console.log(`   🔄 Updated: ${updateCount}`);
     console.log(`   ⏭️  Skipped: ${skipCount}`);
-    console.log(`   � Local preserved: ${localPreserved}`);
-    console.log(`   �🗑️  Deleted: ${removed.length}`);
+    console.log(`     Local preserved: ${localPreserved}`);
+    console.log(`    🗑️  Deleted: ${removed.length}`);
     console.log(`   📁 Total: ${existingArticles.length}`);
     console.log(`\n✅ Done!`);
   } catch (err) {

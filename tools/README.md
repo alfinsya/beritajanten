@@ -1,6 +1,6 @@
-# 📰 BizNews Article Generator
+# 📰 Berita Janten Article Generator
 
-Skrip otomatis untuk generate artikel dari Google Sheets dan mengintegrasikannya **langsung** ke website BizNews (menu News, Search, Related Articles).
+Skrip otomatis untuk generate artikel dari Google Sheets dan mengintegrasikannya **langsung** ke website Berita Janten (menu News, Search, Related Articles).
 
 ## ✨ Fitur
 
@@ -96,7 +96,7 @@ node generate.js
 ## 📁 Struktur & Alur Kerja
 
 ```
-BizNews/
+BeritaJanten/
 ├── article/                    ← Output file HTML artikel (terintegrasi)
 ├── img/                        ← Simpan gambar di sini
 ├── css/                        ← Stylesheet (shared dengan seluruh site)
@@ -200,7 +200,7 @@ Jika format tanggal dari Sheets berbeda, modifikasi di `generate.js` baris yang 
 
 ## 📞 Support
 
-Jika ada pertanyaan atau masalah, hubungi tim development BizNews.
+Jika ada pertanyaan atau masalah, hubungi tim development Berita Janten.
 
 ---
 

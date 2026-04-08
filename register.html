@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Daftar - Indonesia Daily</title>
+    <title>Daftar - BERITA Janten</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@
     <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5">
         <div class="row py-4">
             <div class="col-12 text-center">
-                <p class="text-white">&copy; 2026 <a href="index.html" class="text-primary">Indonesia Daily</a>. All Rights Reserved.</p>
+                <p class="text-white">&copy; 2026 <a href="index.html" class="text-primary">BERITA Janten</a>. All Rights Reserved.</p>
             </div>
         </div>
     </div>
@@ -103,7 +103,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        console.log('ðŸ“„ Register page loaded');
+        console.log('ðŸ"„ Register page loaded');
         
         // Function to show alert
         function showAlert(message, type) {
@@ -130,7 +130,7 @@
         // Handle registration
         function handleRegister(event) {
             event.preventDefault();
-            console.log('ðŸ“ Registration attempt started...');
+            console.log('ðŸ" Registration attempt started...');
             
             const fullname = document.getElementById('fullname').value;
             const email = document.getElementById('email').value;
@@ -139,8 +139,8 @@
             const confirmPassword = document.getElementById('confirm-password').value;
             
             console.log('ðŸ‘¤ Full name:', fullname);
-            console.log('ðŸ“§ Email:', email);
-            console.log('ðŸ“± Phone:', phone);
+            console.log('ðŸ"§ Email:', email);
+            console.log('ðŸ"± Phone:', phone);
             
             // Validate password match
             if (password !== confirmPassword) {
@@ -166,7 +166,7 @@
             // Check if email already exists
             const existingUser = users.find(u => u.email === email);
             if (existingUser) {
-                console.log('âš ï¸ Email already registered');
+                console.log('âš ï¸ Email already registered');
                 showAlert('Email sudah terdaftar. Silakan gunakan email lain atau login.', 'warning');
                 return;
             }
@@ -234,7 +234,7 @@
             
             try {
                 const session = JSON.parse(sessionString);
-                console.log('ðŸ“¦ Session data:', session);
+                console.log('ðŸ"¦ Session data:', session);
                 
                 // Validate session has required fields
                 if (session && session.name && session.email) {
@@ -245,7 +245,7 @@
                         window.location.href = 'index.html';
                     }, 1500);
                 } else {
-                    console.log('âš ï¸ Invalid session (missing fields) - clearing...');
+                    console.log('âš ï¸ Invalid session (missing fields) - clearing...');
                     localStorage.removeItem('userSession');
                     showAlert('Session tidak valid. Silakan daftar atau login.', 'warning');
                 }
